@@ -1,0 +1,33 @@
+plugins {
+    id 'java'
+    id 'war'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // spring 관련 라이브러리
+    implementation "org.springframework:spring-webmvc:6.0.8"
+    compileOnly "jakarta.servlet:jakarta.servlet-api:6.0.0"
+/*
+
+    // servlet 라이브러리
+    implementation 'org.apache.tomcat.embed:tomcat-embed-jasper:10.1.5'
+
+    // JSP 라이브러리
+    implementation 'javax.servlet:javax.servlet-api:4.0.1'
+    implementation 'javax.servlet:jstl:1.2'
+*/
+
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+test {
+    useJUnitPlatform()
+}
